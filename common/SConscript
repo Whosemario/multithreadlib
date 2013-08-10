@@ -1,6 +1,0 @@
-Import('env')
-env.Append(CPPPATH=['/home/whosemario/workspace2/multithreadlib/common/include/'])
-env.Library('multithreads',Glob('*.cpp'))
-env.Append(LIBPATH=['/home/whosemario/workspace2/multithreadlib/common/'])
-Export('env')
-SConscript(['test/SConscript'])
