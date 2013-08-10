@@ -1,0 +1,9 @@
+
+# 4 mac
+.DS_Store
+
+# 4 project
+*.[oa]
+*SConstruct
+*SConscript
+build/
