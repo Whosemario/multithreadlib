@@ -1,0 +1,9 @@
+Import('env')
+#env.Append(CPPPATH=['/Users/whosemario/Workspaces/MultiThreadLib/common/include/'])
+env.Append(LIBPATH=['/Users/whosemario/Workspaces/MultiThreadLib/net/'])
+
+MyLibs= ['multithreads']
+env.Library('net',Glob('*.cpp'),LIBS=MyLibs)
+
+Export('env')
+SConscript(['test/SConscript'])

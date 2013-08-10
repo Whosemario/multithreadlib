@@ -1,0 +1,108 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+COUNT_DOWN_LATCH_H	./common/include/count_down_latch.h	/^#define COUNT_DOWN_LATCH_H$/;"	d
+CountDownLatch	./common/include/count_down_latch.h	/^            CountDownLatch(uint32_t count):_count(count){}$/;"	f	class:multithreads::CountDownLatch
+CountDownLatch	./common/include/count_down_latch.h	/^    class CountDownLatch : public noncopyable{$/;"	c	namespace:multithreads
+FUTURE_H	./common/include/future.h	/^#define FUTURE_H$/;"	d
+FutureClass	./common/future.cpp	/^    FutureClass::FutureClass(){$/;"	f	class:multithreads::FutureClass
+FutureClass	./common/include/future.h	/^    class FutureClass : public noncopyable {$/;"	c	namespace:multithreads
+FuturePtr	./common/include/future.h	/^    typedef std::tr1::shared_ptr<FutureClass> FuturePtr;$/;"	t	namespace:multithreads
+Join	./common/thread.cpp	/^void Thread::Join(){$/;"	f	class:multithreads::Thread
+MICROSECONDS_PER_SECOND	./common/include/mutex.h	/^#define MICROSECONDS_PER_SECOND /;"	d
+MULTITHREADS_LOCK_SAFE	./common/include/mutex.h	/^#define MULTITHREADS_LOCK_SAFE(/;"	d
+MUTEX_H	./common/include/mutex.h	/^#define MUTEX_H$/;"	d
+MainFunc	./common/thread.cpp	/^void * MainFunc(void* obj){$/;"	f	namespace:multithreads
+MutexLock	./common/include/mutex.h	/^            MutexLock(){$/;"	f	class:multithreads::MutexLock
+MutexLock	./common/include/mutex.h	/^    class MutexLock : public noncopyable{$/;"	c	namespace:multithreads
+MutexLockGuard	./common/include/mutex.h	/^            MutexLockGuard(MutexLock& lock):mLock(lock){$/;"	f	class:multithreads::MutexLockGuard
+MutexLockGuard	./common/include/mutex.h	/^    class MutexLockGuard : public noncopyable{$/;"	c	namespace:multithreads
+NANOSECONDS_PER_MICROSECONDS	./common/include/mutex.h	/^#define NANOSECONDS_PER_MICROSECONDS /;"	d
+NONCOPYABLE_H	./common/include/noncopyable.h	/^#define NONCOPYABLE_H$/;"	d
+PTCond	./common/include/mutex.h	/^            PTCond(){$/;"	f	class:multithreads::PTCond
+PTCond	./common/include/mutex.h	/^    class PTCond : public noncopyable{$/;"	c	namespace:multithreads
+PTMutexLock	./common/include/mutex.h	/^    typedef PTRecursiveMutex PTMutexLock;$/;"	t	namespace:multithreads
+PTMutexLockGuard	./common/include/mutex.h	/^            PTMutexLockGuard(PTMutexLock& lock):_lock(lock){$/;"	f	class:multithreads::PTMutexLockGuard
+PTMutexLockGuard	./common/include/mutex.h	/^    class PTMutexLockGuard : public noncopyable{$/;"	c	namespace:multithreads
+PTRecursiveMutex	./common/include/mutex.h	/^            PTRecursiveMutex(){$/;"	f	class:multithreads::PTRecursiveMutex
+PTRecursiveMutex	./common/include/mutex.h	/^    class PTRecursiveMutex : public noncopyable{$/;"	c	namespace:multithreads
+Start	./common/thread.cpp	/^void Thread::Start(){$/;"	f	class:multithreads::Thread
+Succeed	./common/future.cpp	/^    void FutureClass::Succeed(){$/;"	f	class:multithreads::FutureClass
+SucceedAll	./common/future.cpp	/^    void FutureClass::SucceedAll(){$/;"	f	class:multithreads::FutureClass
+THREAD_H	./common/include/thread.h	/^#define THREAD_H$/;"	d
+Thread	./common/include/thread.h	/^    class Thread : noncopyable {$/;"	c	namespace:multithreads
+Thread	./common/thread.cpp	/^Thread::Thread(const ThreadFunc& threadFunc,const string& name):$/;"	f	class:multithreads::Thread
+ThreadData	./common/thread.cpp	/^    explicit  ThreadData(const ThreadFunc& func,const string& name):$/;"	f	struct:multithreads::ThreadData
+ThreadData	./common/thread.cpp	/^struct ThreadData{$/;"	s	namespace:multithreads	file:
+ThreadFunc	./common/include/thread.h	/^            typedef std::tr1::function<void ()> ThreadFunc;$/;"	t	class:multithreads::Thread
+ThreadFunc	./common/thread.cpp	/^    typedef Thread::ThreadFunc ThreadFunc;$/;"	t	struct:multithreads::ThreadData	file:
+Wait	./common/count_down_latch.cpp	/^    void CountDownLatch::Wait(){$/;"	f	class:multithreads::CountDownLatch
+Wait	./common/future.cpp	/^    void FutureClass::Wait(){$/;"	f	class:multithreads::FutureClass
+_cond	./common/include/count_down_latch.h	/^            FutureClass _cond;$/;"	m	class:multithreads::CountDownLatch
+_cond	./common/include/mutex.h	/^            pthread_cond_t _cond;$/;"	m	class:multithreads::PTCond
+_count	./common/include/count_down_latch.h	/^            uint32_t _count;$/;"	m	class:multithreads::CountDownLatch
+_lock	./common/include/count_down_latch.h	/^            MutexLock _lock;$/;"	m	class:multithreads::CountDownLatch
+_lock	./common/include/mutex.h	/^            PTMutexLock& _lock;$/;"	m	class:multithreads::PTMutexLockGuard
+_lock	./common/include/mutex.h	/^            mutable pthread_mutex_t _lock;$/;"	m	class:multithreads::PTRecursiveMutex
+broadcast	./common/include/mutex.h	/^            void broadcast(){$/;"	f	class:multithreads::PTCond
+cond	./common/include/future.h	/^            pthread_cond_t cond;$/;"	m	class:multithreads::FutureClass
+cond	./common/test/ptcond_test.cpp	/^PTCond cond;$/;"	v
+countDown	./common/count_down_latch.cpp	/^    void CountDownLatch::countDown(){$/;"	f	class:multithreads::CountDownLatch
+func	./common/test/count_down_latch_test.cpp	/^void func(string str,uint32_t s){$/;"	f
+func	./common/test/my_thread_h.cpp	/^void func(){$/;"	f
+func	./common/test/ptcond_test.cpp	/^void func(){$/;"	f
+func	./common/test/pthread_test.cpp	/^void * func(void * unused){$/;"	f
+func	./common/test/ptmutexlock_test.cpp	/^void func(){$/;"	f
+func1	./common/test/future_test.cpp	/^void func1(){$/;"	f
+func2	./common/test/future_test.cpp	/^void func2(){$/;"	f
+func3	./common/test/future_test.cpp	/^void func3(){$/;"	f
+getCount	./common/count_down_latch.cpp	/^    uint32_t CountDownLatch::getCount(){$/;"	f	class:multithreads::CountDownLatch
+get_origin_cond	./common/include/mutex.h	/^            pthread_cond_t& get_origin_cond(){$/;"	f	class:multithreads::PTCond
+get_origin_mutex	./common/include/mutex.h	/^            pthread_mutex_t&  get_origin_mutex() const {$/;"	f	class:multithreads::MutexLock
+get_origin_mutex	./common/include/mutex.h	/^            pthread_mutex_t& get_origin_mutex() const {$/;"	f	class:multithreads::PTRecursiveMutex
+lock	./common/include/mutex.h	/^            void lock(){$/;"	f	class:multithreads::MutexLock
+lock	./common/include/mutex.h	/^            void lock(){$/;"	f	class:multithreads::PTRecursiveMutex
+mFunc	./common/include/thread.h	/^            const ThreadFunc mFunc;$/;"	m	class:multithreads::Thread
+mFunc	./common/thread.cpp	/^    const ThreadFunc mFunc;$/;"	m	struct:multithreads::ThreadData	file:
+mLock	./common/include/future.h	/^            MutexLock mLock;$/;"	m	class:multithreads::FutureClass
+mLock	./common/include/mutex.h	/^            MutexLock& mLock;$/;"	m	class:multithreads::MutexLockGuard
+mLock	./common/include/mutex.h	/^            mutable pthread_mutex_t mLock;$/;"	m	class:multithreads::MutexLock
+mName	./common/include/thread.h	/^            const std::string mName;$/;"	m	class:multithreads::Thread
+mName	./common/thread.cpp	/^    const string mName;$/;"	m	struct:multithreads::ThreadData	file:
+mRunning	./common/include/thread.h	/^            bool mRunning;$/;"	m	class:multithreads::Thread
+mThread	./common/include/thread.h	/^            pthread_t mThread;$/;"	m	class:multithreads::Thread
+main	./common/test/count_down_latch_test.cpp	/^int main(){$/;"	f
+main	./common/test/future_test.cpp	/^int main()$/;"	f
+main	./common/test/my_mutex_test.cpp	/^int main()$/;"	f
+main	./common/test/my_thread_h.cpp	/^int main()$/;"	f
+main	./common/test/ptcond_test.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	./common/test/pthread_test.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	./common/test/ptmutexlock_test.cpp	/^int main(int argc, char* argv[])$/;"	f
+multithreads	./common/count_down_latch.cpp	/^namespace multithreads{$/;"	n	file:
+multithreads	./common/future.cpp	/^namespace multithreads{$/;"	n	file:
+multithreads	./common/include/count_down_latch.h	/^namespace multithreads{$/;"	n
+multithreads	./common/include/future.h	/^namespace multithreads{$/;"	n
+multithreads	./common/include/mutex.h	/^namespace multithreads{$/;"	n
+multithreads	./common/include/noncopyable.h	/^namespace multithreads{$/;"	n
+multithreads	./common/include/thread.h	/^namespace multithreads{$/;"	n
+multithreads	./common/thread.cpp	/^namespace multithreads{$/;"	n	file:
+noncopyable	./common/include/noncopyable.h	/^            noncopyable(){}$/;"	f	class:multithreads::noncopyable
+noncopyable	./common/include/noncopyable.h	/^            noncopyable(const noncopyable& ){}$/;"	f	class:multithreads::noncopyable
+noncopyable	./common/include/noncopyable.h	/^    class noncopyable{$/;"	c	namespace:multithreads
+run	./common/thread.cpp	/^    void run(){$/;"	f	struct:multithreads::ThreadData
+signal	./common/include/mutex.h	/^            void signal(){$/;"	f	class:multithreads::PTCond
+thread1	./common/test/pthread_test.cpp	/^pthread_t thread1;$/;"	v
+unlock	./common/include/mutex.h	/^            void unlock(){$/;"	f	class:multithreads::MutexLock
+unlock	./common/include/mutex.h	/^            void unlock(){$/;"	f	class:multithreads::PTRecursiveMutex
+wait	./common/include/mutex.h	/^            int wait(const PTMutexLock& lock, int64_t usec = -1){$/;"	f	class:multithreads::PTCond
+~FutureClass	./common/future.cpp	/^    FutureClass::~FutureClass(){$/;"	f	class:multithreads::FutureClass
+~MutexLock	./common/include/mutex.h	/^            ~MutexLock(){$/;"	f	class:multithreads::MutexLock
+~MutexLockGuard	./common/include/mutex.h	/^            ~MutexLockGuard(){$/;"	f	class:multithreads::MutexLockGuard
+~PTCond	./common/include/mutex.h	/^            ~PTCond(){$/;"	f	class:multithreads::PTCond
+~PTMutexLockGuard	./common/include/mutex.h	/^            ~PTMutexLockGuard(){$/;"	f	class:multithreads::PTMutexLockGuard
+~PTRecursiveMutex	./common/include/mutex.h	/^            ~PTRecursiveMutex(){$/;"	f	class:multithreads::PTRecursiveMutex
+~Thread	./common/include/thread.h	/^            virtual ~Thread(){mRunning = false;}$/;"	f	class:multithreads::Thread
+~noncopyable	./common/include/noncopyable.h	/^            ~noncopyable(){}$/;"	f	class:multithreads::noncopyable

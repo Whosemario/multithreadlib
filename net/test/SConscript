@@ -1,0 +1,11 @@
+Import('env')
+
+env.Append(CPPPATH=['/Users/whosemario/Workspaces/MultiThreadLib/net/'])
+MyLibs= ['multithreads','net']
+
+poll_test= env.Program('poll_test.cpp',LIBS=MyLibs)
+
+#install
+InstallObj = [poll_test
+            ]
+env.Install('#build/',InstallObj)
