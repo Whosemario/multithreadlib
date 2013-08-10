@@ -4,6 +4,7 @@
 #include <iostream>
 #include <pthread.h>
 #include <assert.h>
+#include <cstring>
 #include <errno.h>
 #include <sys/time.h>
 #include "noncopyable.h"

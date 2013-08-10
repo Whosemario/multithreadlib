@@ -4,6 +4,7 @@
 #include <map>
 #include <vector>
 #include <poll.h>
+#include "global.h"
 #include "channel.h"
 namespace net{
 

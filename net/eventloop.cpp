@@ -7,6 +7,8 @@ using namespace std;
 namespace net{
     void EventLoop::loop(){
         vector<ChannelPtr> activeChannels;
+
+        cout << "Log: in loop" <<endl;
         while(isRunning){
 
             activeChannels.clear();
@@ -15,6 +17,7 @@ namespace net{
             for(uint32_t i = 0; i<activeChannels.size() ;++i){
                 activeChannels[i]->handleEvent();
             }
+
         }
     }
 

@@ -3,25 +3,39 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
-COUNT_DOWN_LATCH_H	./common/include/count_down_latch.h	/^#define COUNT_DOWN_LATCH_H$/;"	d
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CHANNEL_H	./net/channel.h	2;"	d
+COUNT_DOWN_LATCH_H	./common/include/count_down_latch.h	2;"	d
+Channel	./net/channel.h	/^        Channel(int fd):mFd(fd){}$/;"	f	class:net::Channel
+Channel	./net/channel.h	/^class Channel{$/;"	c	namespace:net
+ChannelList	./net/poller.h	/^        typedef std::vector<ChannelPtr> ChannelList;$/;"	t	class:net::Poller
+ChannelPtr	./net/channel.h	/^typedef std::tr1::shared_ptr<Channel> ChannelPtr;$/;"	t	namespace:net
 CountDownLatch	./common/include/count_down_latch.h	/^            CountDownLatch(uint32_t count):_count(count){}$/;"	f	class:multithreads::CountDownLatch
 CountDownLatch	./common/include/count_down_latch.h	/^    class CountDownLatch : public noncopyable{$/;"	c	namespace:multithreads
-FUTURE_H	./common/include/future.h	/^#define FUTURE_H$/;"	d
+EVENT_LOOP_H	./net/eventloop.h	2;"	d
+EventCallback	./net/channel.h	/^        typedef std::tr1::function<void()> EventCallback;$/;"	t	class:net::Channel
+EventLoop	./net/eventloop.h	/^        EventLoop():mPollTimeout(-1),isRunning(false){}$/;"	f	class:net::EventLoop
+EventLoop	./net/eventloop.h	/^        EventLoop(int timeout):mPollTimeout(timeout),isRunning(false){}$/;"	f	class:net::EventLoop
+EventLoop	./net/eventloop.h	/^class EventLoop : multithreads::noncopyable$/;"	c	namespace:net
+FUTURE_H	./common/include/future.h	2;"	d
+Fd2ChannelMap	./net/poller.h	/^        typedef std::map<int , ChannelPtr> Fd2ChannelMap;$/;"	t	class:net::Poller
+Fd2IndexMap	./net/poller.h	/^        typedef std::map<int, uint32_t> Fd2IndexMap;$/;"	t	class:net::Poller
 FutureClass	./common/future.cpp	/^    FutureClass::FutureClass(){$/;"	f	class:multithreads::FutureClass
 FutureClass	./common/include/future.h	/^    class FutureClass : public noncopyable {$/;"	c	namespace:multithreads
 FuturePtr	./common/include/future.h	/^    typedef std::tr1::shared_ptr<FutureClass> FuturePtr;$/;"	t	namespace:multithreads
+GLOBAL_H	./common/include/global.h	2;"	d
 Join	./common/thread.cpp	/^void Thread::Join(){$/;"	f	class:multithreads::Thread
-MICROSECONDS_PER_SECOND	./common/include/mutex.h	/^#define MICROSECONDS_PER_SECOND /;"	d
-MULTITHREADS_LOCK_SAFE	./common/include/mutex.h	/^#define MULTITHREADS_LOCK_SAFE(/;"	d
-MUTEX_H	./common/include/mutex.h	/^#define MUTEX_H$/;"	d
+MICROSECONDS_PER_SECOND	./common/include/mutex.h	142;"	d
+MULTITHREADS_LOCK_SAFE	./common/include/mutex.h	12;"	d
+MUTEX_H	./common/include/mutex.h	2;"	d
 MainFunc	./common/thread.cpp	/^void * MainFunc(void* obj){$/;"	f	namespace:multithreads
 MutexLock	./common/include/mutex.h	/^            MutexLock(){$/;"	f	class:multithreads::MutexLock
 MutexLock	./common/include/mutex.h	/^    class MutexLock : public noncopyable{$/;"	c	namespace:multithreads
 MutexLockGuard	./common/include/mutex.h	/^            MutexLockGuard(MutexLock& lock):mLock(lock){$/;"	f	class:multithreads::MutexLockGuard
 MutexLockGuard	./common/include/mutex.h	/^    class MutexLockGuard : public noncopyable{$/;"	c	namespace:multithreads
-NANOSECONDS_PER_MICROSECONDS	./common/include/mutex.h	/^#define NANOSECONDS_PER_MICROSECONDS /;"	d
-NONCOPYABLE_H	./common/include/noncopyable.h	/^#define NONCOPYABLE_H$/;"	d
+NANOSECONDS_PER_MICROSECONDS	./common/include/mutex.h	143;"	d
+NONCOPYABLE_H	./common/include/noncopyable.h	2;"	d
+POLLER_H	./net/poller.h	2;"	d
 PTCond	./common/include/mutex.h	/^            PTCond(){$/;"	f	class:multithreads::PTCond
 PTCond	./common/include/mutex.h	/^    class PTCond : public noncopyable{$/;"	c	namespace:multithreads
 PTMutexLock	./common/include/mutex.h	/^    typedef PTRecursiveMutex PTMutexLock;$/;"	t	namespace:multithreads
@@ -29,10 +43,14 @@ PTMutexLockGuard	./common/include/mutex.h	/^            PTMutexLockGuard(PTMutex
 PTMutexLockGuard	./common/include/mutex.h	/^    class PTMutexLockGuard : public noncopyable{$/;"	c	namespace:multithreads
 PTRecursiveMutex	./common/include/mutex.h	/^            PTRecursiveMutex(){$/;"	f	class:multithreads::PTRecursiveMutex
 PTRecursiveMutex	./common/include/mutex.h	/^    class PTRecursiveMutex : public noncopyable{$/;"	c	namespace:multithreads
+PollFdList	./net/poller.h	/^        typedef std::vector<struct pollfd> PollFdList;$/;"	t	class:net::Poller
+Poller	./net/poller.h	/^class Poller{$/;"	c	namespace:net
 Start	./common/thread.cpp	/^void Thread::Start(){$/;"	f	class:multithreads::Thread
+Start	./net/eventloop.h	/^        void Start(){ isRunning = true; loop();}$/;"	f	class:net::EventLoop
+Stop	./net/eventloop.h	/^        void Stop(){ isRunning = false; }$/;"	f	class:net::EventLoop
 Succeed	./common/future.cpp	/^    void FutureClass::Succeed(){$/;"	f	class:multithreads::FutureClass
 SucceedAll	./common/future.cpp	/^    void FutureClass::SucceedAll(){$/;"	f	class:multithreads::FutureClass
-THREAD_H	./common/include/thread.h	/^#define THREAD_H$/;"	d
+THREAD_H	./common/include/thread.h	2;"	d
 Thread	./common/include/thread.h	/^    class Thread : noncopyable {$/;"	c	namespace:multithreads
 Thread	./common/thread.cpp	/^Thread::Thread(const ThreadFunc& threadFunc,const string& name):$/;"	f	class:multithreads::Thread
 ThreadData	./common/thread.cpp	/^    explicit  ThreadData(const ThreadFunc& func,const string& name):$/;"	f	struct:multithreads::ThreadData
@@ -51,20 +69,32 @@ broadcast	./common/include/mutex.h	/^            void broadcast(){$/;"	f	class:m
 cond	./common/include/future.h	/^            pthread_cond_t cond;$/;"	m	class:multithreads::FutureClass
 cond	./common/test/ptcond_test.cpp	/^PTCond cond;$/;"	v
 countDown	./common/count_down_latch.cpp	/^    void CountDownLatch::countDown(){$/;"	f	class:multithreads::CountDownLatch
+fillActiveChannel	./net/poller.cpp	/^    void Poller::fillActiveChannel(int numEvents, ChannelList& activeChannels){$/;"	f	class:net::Poller
 func	./common/test/count_down_latch_test.cpp	/^void func(string str,uint32_t s){$/;"	f
 func	./common/test/my_thread_h.cpp	/^void func(){$/;"	f
 func	./common/test/ptcond_test.cpp	/^void func(){$/;"	f
 func	./common/test/pthread_test.cpp	/^void * func(void * unused){$/;"	f
 func	./common/test/ptmutexlock_test.cpp	/^void func(){$/;"	f
+func	./net/test/timerfd_test.cpp	/^void func(){$/;"	f
 func1	./common/test/future_test.cpp	/^void func1(){$/;"	f
 func2	./common/test/future_test.cpp	/^void func2(){$/;"	f
 func3	./common/test/future_test.cpp	/^void func3(){$/;"	f
 getCount	./common/count_down_latch.cpp	/^    uint32_t CountDownLatch::getCount(){$/;"	f	class:multithreads::CountDownLatch
+getEvents	./net/channel.h	/^        short getEvents(){return mEvents;}$/;"	f	class:net::Channel
+getFd	./net/channel.h	/^        int getFd(){return mFd;}$/;"	f	class:net::Channel
+getREvents	./net/channel.h	/^        short getREvents(){return mRevents;}$/;"	f	class:net::Channel
 get_origin_cond	./common/include/mutex.h	/^            pthread_cond_t& get_origin_cond(){$/;"	f	class:multithreads::PTCond
 get_origin_mutex	./common/include/mutex.h	/^            pthread_mutex_t&  get_origin_mutex() const {$/;"	f	class:multithreads::MutexLock
 get_origin_mutex	./common/include/mutex.h	/^            pthread_mutex_t& get_origin_mutex() const {$/;"	f	class:multithreads::PTRecursiveMutex
+handleEvent	./net/channel.cpp	/^    void Channel::handleEvent(){$/;"	f	class:net::Channel
+isRunning	./net/eventloop.h	/^        volatile bool isRunning;$/;"	m	class:net::EventLoop
 lock	./common/include/mutex.h	/^            void lock(){$/;"	f	class:multithreads::MutexLock
 lock	./common/include/mutex.h	/^            void lock(){$/;"	f	class:multithreads::PTRecursiveMutex
+loop	./net/eventloop.cpp	/^    void EventLoop::loop(){$/;"	f	class:net::EventLoop
+mEvents	./net/channel.h	/^        short mEvents;$/;"	m	class:net::Channel
+mFd	./net/channel.h	/^        int mFd;$/;"	m	class:net::Channel
+mFd2Channel	./net/poller.h	/^        Fd2ChannelMap mFd2Channel;$/;"	m	class:net::Poller
+mFd2Index	./net/poller.h	/^        Fd2IndexMap mFd2Index;$/;"	m	class:net::Poller
 mFunc	./common/include/thread.h	/^            const ThreadFunc mFunc;$/;"	m	class:multithreads::Thread
 mFunc	./common/thread.cpp	/^    const ThreadFunc mFunc;$/;"	m	struct:multithreads::ThreadData	file:
 mLock	./common/include/future.h	/^            MutexLock mLock;$/;"	m	class:multithreads::FutureClass
@@ -72,6 +102,9 @@ mLock	./common/include/mutex.h	/^            MutexLock& mLock;$/;"	m	class:multi
 mLock	./common/include/mutex.h	/^            mutable pthread_mutex_t mLock;$/;"	m	class:multithreads::MutexLock
 mName	./common/include/thread.h	/^            const std::string mName;$/;"	m	class:multithreads::Thread
 mName	./common/thread.cpp	/^    const string mName;$/;"	m	struct:multithreads::ThreadData	file:
+mPollList	./net/poller.h	/^        PollFdList mPollList;$/;"	m	class:net::Poller
+mPollTimeout	./net/eventloop.h	/^        int mPollTimeout ;$/;"	m	class:net::EventLoop
+mRevents	./net/channel.h	/^        short mRevents;$/;"	m	class:net::Channel
 mRunning	./common/include/thread.h	/^            bool mRunning;$/;"	m	class:multithreads::Thread
 mThread	./common/include/thread.h	/^            pthread_t mThread;$/;"	m	class:multithreads::Thread
 main	./common/test/count_down_latch_test.cpp	/^int main(){$/;"	f
@@ -81,6 +114,8 @@ main	./common/test/my_thread_h.cpp	/^int main()$/;"	f
 main	./common/test/ptcond_test.cpp	/^int main(int argc, char* argv[])$/;"	f
 main	./common/test/pthread_test.cpp	/^int main(int argc, char* argv[])$/;"	f
 main	./common/test/ptmutexlock_test.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	./net/test/poll_test.cpp	/^int main(int argc, char * argv[])$/;"	f
+main	./net/test/timerfd_test.cpp	/^int main(int argc, char* argv[])$/;"	f
 multithreads	./common/count_down_latch.cpp	/^namespace multithreads{$/;"	n	file:
 multithreads	./common/future.cpp	/^namespace multithreads{$/;"	n	file:
 multithreads	./common/include/count_down_latch.h	/^namespace multithreads{$/;"	n
@@ -89,15 +124,34 @@ multithreads	./common/include/mutex.h	/^namespace multithreads{$/;"	n
 multithreads	./common/include/noncopyable.h	/^namespace multithreads{$/;"	n
 multithreads	./common/include/thread.h	/^namespace multithreads{$/;"	n
 multithreads	./common/thread.cpp	/^namespace multithreads{$/;"	n	file:
+net	./net/channel.cpp	/^namespace net{$/;"	n	file:
+net	./net/channel.h	/^namespace net{$/;"	n
+net	./net/eventloop.cpp	/^namespace net{$/;"	n	file:
+net	./net/eventloop.h	/^namespace net{$/;"	n
+net	./net/poller.cpp	/^namespace net{$/;"	n	file:
+net	./net/poller.h	/^namespace net{$/;"	n
 noncopyable	./common/include/noncopyable.h	/^            noncopyable(){}$/;"	f	class:multithreads::noncopyable
 noncopyable	./common/include/noncopyable.h	/^            noncopyable(const noncopyable& ){}$/;"	f	class:multithreads::noncopyable
 noncopyable	./common/include/noncopyable.h	/^    class noncopyable{$/;"	c	namespace:multithreads
+poll	./net/poller.cpp	/^    int Poller::poll(int timeout, ChannelList& activeChannels){$/;"	f	class:net::Poller
+poller	./net/eventloop.h	/^        Poller poller;$/;"	m	class:net::EventLoop
+pollfds	./net/test/timerfd_test.cpp	/^struct pollfd pollfds[1];$/;"	v	typeref:struct:pollfd
+rEvent	./net/channel.h	/^        const static short rEvent = POLLIN | POLLPRI;$/;"	m	class:net::Channel
+readCallback	./net/channel.h	/^        EventCallback readCallback;$/;"	m	class:net::Channel
 run	./common/thread.cpp	/^    void run(){$/;"	f	struct:multithreads::ThreadData
+setChannel2Read	./net/channel.h	/^        void setChannel2Read(){mEvents |= rEvent;}$/;"	f	class:net::Channel
+setChannel2Write	./net/channel.h	/^        void setChannel2Write(){mEvents |= wEvent;}$/;"	f	class:net::Channel
+setReadCallback	./net/channel.h	/^        void setReadCallback(EventCallback cb){$/;"	f	class:net::Channel
+setWriteCallback	./net/channel.h	/^        void setWriteCallback(EventCallback cb){$/;"	f	class:net::Channel
 signal	./common/include/mutex.h	/^            void signal(){$/;"	f	class:multithreads::PTCond
 thread1	./common/test/pthread_test.cpp	/^pthread_t thread1;$/;"	v
 unlock	./common/include/mutex.h	/^            void unlock(){$/;"	f	class:multithreads::MutexLock
 unlock	./common/include/mutex.h	/^            void unlock(){$/;"	f	class:multithreads::PTRecursiveMutex
+updateChannel	./net/eventloop.cpp	/^    void EventLoop::updateChannel(ChannelPtr& channel){$/;"	f	class:net::EventLoop
+updateChannel	./net/poller.cpp	/^    void Poller::updateChannel(ChannelPtr& channel){$/;"	f	class:net::Poller
+wEvent	./net/channel.h	/^        const static short wEvent = POLLOUT;$/;"	m	class:net::Channel
 wait	./common/include/mutex.h	/^            int wait(const PTMutexLock& lock, int64_t usec = -1){$/;"	f	class:multithreads::PTCond
+writeCallback	./net/channel.h	/^        EventCallback writeCallback;$/;"	m	class:net::Channel
 ~FutureClass	./common/future.cpp	/^    FutureClass::~FutureClass(){$/;"	f	class:multithreads::FutureClass
 ~MutexLock	./common/include/mutex.h	/^            ~MutexLock(){$/;"	f	class:multithreads::MutexLock
 ~MutexLockGuard	./common/include/mutex.h	/^            ~MutexLockGuard(){$/;"	f	class:multithreads::MutexLockGuard

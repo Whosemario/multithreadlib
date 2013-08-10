@@ -1,4 +1,5 @@
 #include "poller.h"
+#include <iostream>
 using namespace std;
 namespace net{
     int Poller::poll(int timeout, ChannelList& activeChannels){
@@ -15,8 +16,10 @@ namespace net{
             if(pfd.revents > 0){
                 --numEvents;
                 Fd2ChannelMap::iterator iter = mFd2Channel.find(pfd.fd);
-                if(iter != mFd2Channel.end())
+                if(iter != mFd2Channel.end()){
+                    iter->second->setREvents(pfd.revents);
                     activeChannels.push_back(iter->second);
+                }
             }
         }
     }

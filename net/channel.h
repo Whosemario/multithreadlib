@@ -3,12 +3,15 @@
 
 #include <tr1/functional>
 #include <tr1/memory>
+#include "global.h"
 #include "poll.h"
 
 namespace net{
 class Channel{
     public:
         typedef std::tr1::function<void()> EventCallback;
+
+        Channel(int fd):mFd(fd){}
         void setReadCallback(EventCallback cb){
             readCallback = cb;
         }
@@ -20,6 +23,7 @@ class Channel{
         int getFd(){return mFd;}
         short getEvents(){return mEvents;}
         short getREvents(){return mRevents;}
+        void setREvents(short _revents){mRevents = _revents;}
 
         void setChannel2Read(){mEvents |= rEvent;}
         void setChannel2Write(){mEvents |= wEvent;}

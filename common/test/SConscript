@@ -1,13 +1,17 @@
 Import('env')
 
-MyLibs= ['multithreads']
+env = Environment(CC='g++',CCFLAGS='-g -lpthread -std=c++0x')
+env.Append(CPPPATH=['/home/whosemario/workspace2/multithreadlib/common/include/'])
+env.Append(LIBPATH=['/home/whosemario/workspace2/multithreadlib/common/'])
 
-pthread_test = env.Program('pthread_test.cpp')
-my_mutex_test = env.Program('my_mutex_test.cpp')
+MyLibs= ['pthread','multithreads']
+
+pthread_test = env.Program('pthread_test.cpp',LIBS=MyLibs)
+my_mutex_test = env.Program('my_mutex_test.cpp',LIBS=MyLibs)
 my_thread_h = env.Program('my_thread_h.cpp',LIBS=MyLibs)
 future_test = env.Program('future_test.cpp',LIBS=MyLibs)
 count_down_latch_test = env.Program('count_down_latch_test.cpp',LIBS=MyLibs)
-ptmutexlock_test = env.Program('ptmutexlock_test.cpp')
+ptmutexlock_test = env.Program('ptmutexlock_test.cpp',LIBS=MyLibs)
 ptcond_test = env.Program('ptcond_test.cpp',LIBS=MyLibs)
 
 #install

@@ -1,5 +1,7 @@
 #ifndef NONCOPYABLE_H
 #define NONCOPYABLE_H
+
+#include "global.h"
 namespace multithreads{
     class noncopyable{
         protected:
