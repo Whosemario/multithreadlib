@@ -7,3 +7,6 @@
 *SConstruct
 *SConscript
 build/
+
+!*.cpp
+!*.h
