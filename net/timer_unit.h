@@ -3,14 +3,14 @@
 
 #include "noncopyable.h"
 #include "timer.h"
-#include <tr1/functional>
+#include <functional>
 
 namespace net{
 
     class TimerUnit : public multithreads::noncopyable{
 
         public:
-            typedef std::tr1::function<void()> TimerUnitCallback;
+            typedef std::function<void()> TimerUnitCallback;
             TimerUnit(const TimerUnitCallback& cb,
                     const uint64_t expiration,
                     const uint64_t interval):mCallback(cb),mExpiration(expiration),

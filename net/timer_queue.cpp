@@ -1,7 +1,7 @@
 #include "timer_queue.h"
 #include "eventloop.h"
 #include <sys/timerfd.h>
-#include <tr1/functional>
+#include <functional>
 #include <string.h>
 #include <unistd.h>
 #include "global.h"
@@ -14,7 +14,7 @@ TimerQueue::TimerQueue(EventLoop* evtLoop):
     mTimerFd(TimerFdCreate()),timerChannel(new Channel(mTimerFd)){
         timerChannel->setChannel2Read();
         timerChannel->setReadCallback(
-                tr1::bind(&TimerQueue::HandleTimerUnit,this));
+                bind(&TimerQueue::HandleTimerUnit,this));
         evtLoop->updateChannel(timerChannel);
     }
 

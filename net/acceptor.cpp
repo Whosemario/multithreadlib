@@ -11,7 +11,7 @@ Acceptor::Acceptor(EventLoop* loop,const InetAddress& addr):
 	mSocket(sockets::CreateNonblockingOrDie()),mChannel(new Channel(mSocket.getSocketFd())){
 	mSocket.setReuseAddr(true);
 	mSocket.bindAddress(addr);
-	mChannel->setReadCallback(tr1::bind(&Acceptor::handleRead,this));
+	mChannel->setReadCallback(bind(&Acceptor::handleRead,this));
 	mChannel->setChannel2Read();	
 	loop->updateChannel(mChannel);
 }	
@@ -20,7 +20,7 @@ void Acceptor::handleRead(){
 	InetAddress peerAddr(0);
 	int connFd = mSocket.accept(peerAddr);
 	if(connFd >= 0){
-		if(mCallback) mCallback(connFd,peerAddr);
+		if(mCallback) mCallback(connFd);//mCallback(connFd,peerAddr);
 		else sockets::Close(connFd);
 	}
 }

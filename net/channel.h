@@ -1,15 +1,15 @@
 #ifndef CHANNEL_H
 #define CHANNEL_H
 
-#include <tr1/functional>
-#include <tr1/memory>
+#include <functional>
+#include <memory>
 #include "global.h"
 #include "poll.h"
 
 namespace net{
 class Channel{
     public:
-        typedef std::tr1::function<void()> EventCallback;
+        typedef std::function<void()> EventCallback;
 
         Channel(int fd):mFd(fd){}
         void setReadCallback(EventCallback cb){
@@ -39,6 +39,6 @@ class Channel{
         const static short wEvent = POLLOUT;
 };
 
-typedef std::tr1::shared_ptr<Channel> ChannelPtr;
+typedef std::shared_ptr<Channel> ChannelPtr;
 }
 #endif
