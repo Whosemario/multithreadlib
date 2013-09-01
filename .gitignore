@@ -1,6 +1,7 @@
 
 # 4 mac
 .DS_Store
+.sconsign.dblite
 
 # 4 project
 *.[oa]
